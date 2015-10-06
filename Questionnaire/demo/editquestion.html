@@ -1,0 +1,36 @@
+<div ui-content-for="title">
+  <span>新建调查问卷</span>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="section qrow" ng-repeat="idx in queslist" drag-to-down="ajustOrder($index,$num)" drag-to-up="ajustOrder($index,$num)">
+        <div class="panel panel-default qnumber">  
+        <div class="panel-body">
+            <p><strong>{{$index+1}}</strong></p>
+            <p>{{idx.type_name}}</p>
+        </div>
+      </div>
+        
+      <div class="panel panel-default qcontent" id="qcontent{{$index}}">  
+        <div class="panel-body no-edit" ng-dblclick="showedit($index)">
+           {{idx.title}}
+        </div>
+		<div class="edit-content" style="display:none">
+		<div class="panel-body" ng-include="edit_tmp"></div>
+		</div>
+      </div>
+    </div>  
+    
+      <strong>我要添加 :</strong>
+      <a href="" 
+          class="btn btn-default" ng-click="changeType('single')">单选题</a>
+      <a href="" 
+          class="btn btn-default" ng-click="changeType('mutiple')">多选题</a>
+      <a href="" 
+          class="btn btn-default" ng-click="changeType('score')">打分题</a>
+      <a href="" 
+          class="btn btn-default" ng-click="changeType('essay')">填空题</a>  
+	<div ng-include="template" class="section"></div>
+  </div>
+</div>

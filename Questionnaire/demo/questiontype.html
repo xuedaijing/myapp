@@ -1,0 +1,20 @@
+<div ui-content-for="title">
+  <span>新建调查问卷</span>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="section section-break">
+      <strong>我要添加 :</strong>
+      <a href="" 
+          class="btn btn-default" ng-click="changeType('single')">单选题</a>
+      <a href="" 
+          class="btn btn-default" ng-click="changeType('mutiple')">多选题</a>
+      <a href="" 
+          class="btn btn-default" ng-click="changeType('score')">打分题</a>
+      <a href="" 
+          class="btn btn-default" ng-click="changeType('essay')">填空题</a>
+    </div>
+	<div ng-include="template" class="section"></div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div ui-content-for="title">
+  <span>新建调查问卷</span>
+</div>
+
+<div class="scrollable">
+ <div class="scrollable-content section">
+   
+  <form role="form">
+    <fieldset>
+      <legend>问卷信息</legend>
+        <div class="form-group has-success has-feedback">
+          <input type="text"
+                 class="form-control"
+                 placeholder="发布机构（必填）" ng-model="info.organ" ng-blur="lostfouce($event,info.organ)">
+        </div>
+
+        <div class="form-group has-feedback">
+          <input type="text" 
+                 class="form-control"
+                 placeholder="主题（必填）" ng-model="info.title" ng-blur="lostfouce($event,info.title)">
+        </div>
+        
+        <div class="form-group">
+          <input type="text" 
+                 class="form-control"
+                 placeholder="副标题" ng-model="info.sub_title">
+        </div>
+        
+        <div class="form-group">
+          <input type="text" 
+                 class="form-control"
+                 placeholder="截止日期" ng-model="info.deadline">
+        </div>
+
+        <div>
+          <label>欢迎使用。。。。</label>
+        </div>
+    </fieldset>
+    <hr>
+
+    <button class="btn btn-primary btn-block" ng-click="start(info)">
+     开 始
+    </button>
+
+   <!--  <div ui-content-for="navbarAction">
+      <a class='btn' ng-click='login()'>Login</a>
+    </div> -->
+
+  </form>
+ </div>
+</div>

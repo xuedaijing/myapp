@@ -1,0 +1,39 @@
+<!-- <div ui-content-for="title">
+  <span>新建调查问卷</span>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content section"> -->
+    <form role="form">
+    <fieldset>
+      <legend>
+            单选题
+        <div class="pull-right">
+             完成
+        </div>
+        </legend>
+        <div class="form-group has-feedback">
+          <input type="text" 
+                 class="form-control"
+                 placeholder="主题（必填）" ng-model="ques.title" ng-blur="lostfouce($event,ques.title)">
+        </div>
+        <div id="selects">
+        <div class="form-group" ng-repeat="idx in ques.options">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="{{idx.id}}" checked="">{{idx.id}}
+					<input type="text" ng-model="idx.content"></input>
+                </label>
+            </div>
+        </div>
+		</div>	
+        <div><button style="border:1px solid #eee;border-radius:4px;" ng-click="addNewAns()">+</button>添加选项</div>
+    </fieldset>
+    <hr>
+
+    <button class="btn btn-primary btn-block" ng-click="addQues(ques)">
+     保   存
+    </button>
+  </form>
+  <!-- </div>
+</div> -->

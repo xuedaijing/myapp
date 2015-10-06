@@ -1,0 +1,45 @@
+<div ui-content-for="title">
+  <span>查看问卷结果</span>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="section qrow" ng-repeat="idx in [1,2,3]">
+        <div class="panel panel-default qnumber">  
+            <div class="panel-heading"><strong>{{idx}}</strong></div>
+        <div class="panel-body">
+            <p>类型</p>
+        </div>
+      </div>
+      <div class="panel panel-default qcontent" >
+        <div class="panel-heading">
+          <div class="btn-group pull-right">
+            <a ui-turn-on='myDropdown{{idx}}' class='btn'>
+              <i class="fa fa-ellipsis-v"></i>
+            </a>
+            <ul 
+              ui-state="myDropdown{{idx}}"
+
+              class="dropdown-menu"
+              ui-outer-click="Ui.turnOff('myDropdown' + idx)"
+              ui-outer-click-if="Ui.active('myDropdown' + idx)"
+              role="menu"
+              ui-show="myDropdown{{idx}}"
+              ui-turn-off="myDropdown{{idx}}">
+
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div>
+          <h3 class="panel-title">Question Number {{idx}}</h3>
+        </div>
+        <div class="panel-body">
+           {{lorem}}
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>

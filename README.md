@@ -1,3 +1,5 @@
+$ npm install express
+
 node web_node
 
 localhost:3000/demo/#/ for preview on the laptop
